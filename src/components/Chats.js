@@ -3,11 +3,11 @@ import '../css/Chats.css'
 
 import Chat from "./Chat";
 
-function RightSideNavbar() {
+function Chats() {
     return (
         <div className = "chats">
             <div className="row" style={{ padding: 0, margin: 0 }}>
-                <div className="col-md-3">
+                <div className="col-md-3" style = {{ padding: 0 }}>
                     <div className = "chat__header">
                         <span><h3>Your Chats</h3></span>
                     </div>
@@ -28,4 +28,4 @@ function RightSideNavbar() {
     )
 }
 
-export default RightSideNavbar
+export default Chats
