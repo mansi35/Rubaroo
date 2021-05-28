@@ -5,6 +5,7 @@ function RightSideNavbar() {
     return (
         <div className = "RightSideNavbar">
             <h1>Your Chats</h1>
+            {/* <Chat />*/}
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import './App.css';
-import LeftSideNavbar from './components/LeftSidebar';
-import RightSideNavbar from './components/RightSideNavbar';
+import LeftSideNavbar from './components/Navbar';
+import RightSideNavbar from './components/Chats';
 import Feed from './components/Feed';
 import OrganizationSearch from './pages/OrganizationSearch';
 
