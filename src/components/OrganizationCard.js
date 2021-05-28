@@ -42,12 +42,12 @@ function OrganizationCard({ id, emailAdd, name, profilePic, category, noUsers })
         });
     }
 
-    // if (currentUser.email === emailAdd) {
-    //     return (
-    //         <div style={{display:'none'}}>
-    //         </div>
-    //     )
-    // }
+    if (currentUser.email === emailAdd) {
+        return (
+            <div style={{display:'none'}}>
+            </div>
+        )
+    }
     return (
         <div className="card"  style={{height: "fit-content"}}>
             <div className="card-header">
