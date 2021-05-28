@@ -5,7 +5,7 @@ function NavbarOption({ Icon, name }) {
     return (
         <div className = "navbarOption">
             <Icon />
-            <h2>{ name }</h2>
+            <h5>{ name }</h5>
         </div>
     )
 }

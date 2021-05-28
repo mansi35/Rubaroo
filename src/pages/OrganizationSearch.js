@@ -2,13 +2,31 @@ import React from 'react'
 import '../css/OrganizationSearch.css'
 import SearchIcon from '@material-ui/icons/Search';
 import OrganizationCard from '../components/OrganizationCard';
+import Navbar from "../components/Navbar";
+import VideoCallIcon from '@material-ui/icons/VideoCall';
+import BookIcon from '@material-ui/icons/Book';
+import LocalLibraryIcon from '@material-ui/icons/LocalLibrary';
 
 function OrganizationSearch() {
+    const navbarOptions = [
+        {
+            Icon: VideoCallIcon,
+            name: "Near You"
+        },
+        {
+            Icon: BookIcon, 
+            name: "Number of people in your organization"
+        }, 
+        {
+            Icon: LocalLibraryIcon,
+            name: "Mutual Friends"
+        },
+    ]
     return (
         <div className="organizationSearch">
             <div className="row" style={{ padding: 0, margin: 0 }}>
                 <div className="organizationSearch__sidebar col-md-2">
-
+                    <Navbar options={navbarOptions} />
                 </div>
                 <div className="organizationSearch__body col-md-10">
                     <div className="organizationSearch__header">
