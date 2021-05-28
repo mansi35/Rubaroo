@@ -2,10 +2,23 @@ import React from 'react'
 import Navbar from "../components/Navbar";
 import Chats from "../components/Chats";
 
+import VideoCallIcon from '@material-ui/icons/VideoCall';
+import BookIcon from '@material-ui/icons/Book';
+import LocalLibraryIcon from '@material-ui/icons/LocalLibrary';
+import EmojiEmotionsOutlinedIcon from '@material-ui/icons/EmojiEmotionsOutlined';
+
 function IndividualDashboard() {
     return (
         <div className = "individualDashboard">
-            <Navbar />
+            <Navbar options = {[
+                {"Icon": {VideoCallIcon},
+                 "name": "Video Call"},
+                {"Icon": {BookIcon}, 
+                 "name": "Listen to a story"}, 
+                {"Icon": {LocalLibraryIcon},
+                 "name": "Library"}, 
+                {"Icon": {EmojiEmotionsOutlinedIcon},
+                 "name": "Watch Party"}]} />
 
             {/* Feed */}
 
