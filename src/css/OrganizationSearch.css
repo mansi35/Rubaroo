@@ -1,0 +1,40 @@
+.organizationSearch__body {
+    background-color: #FFDAB9;
+    height: 100%;
+}
+
+.organizationSearch__organizations {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+    align-items: center;
+}
+
+.organizationSearch__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 15px;
+    margin: 15px 55px;
+    margin-bottom: 0;
+}
+
+.organizationSearch__headerText > h6 {
+    color: #F08080;
+}
+
+.organizationSearch__searchbar {
+    display: flex;
+    align-items: center;
+    background-color: #eff2f5;
+    padding: 10px;
+    border-radius: 30px;
+    height: 45px;
+}
+
+.organizationSearch__searchbar > input {
+    border: none;
+    background-color: transparent;
+    outline-width: 0;
+}
