@@ -1,14 +1,42 @@
 .chat {
     display: flex;
+    flex-direction: column;
+}
+
+.chat__top {
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    padding: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    cursor: pointer;
 }
 
 .chat__top > h3 {
-    padding-left: 10px;
-    color: white;
+    color: #2F2E41;
+    padding-left: 15px;
 }
 
-.chat__bottom > p {
-    color: white;
+.chat__bottom {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-top: 10px;
+    cursor: pointer;
+}
+
+.message {
+    flex-direction: column;
+    color: #2F2E41;
+    padding-left: 15px;
+    width:fit-content;
+}
+
+.contact {
+    display: flex;
+    padding: 10px;
+}
+
+.contact > h3 {
+    padding-left: 10px;
 }

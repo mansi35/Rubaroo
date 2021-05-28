@@ -29,6 +29,16 @@
 }
 
 .feed__starter > h4 {
+    display: flex;
+    flex-direction: row;
     padding: 50px 0px;
     font-family: 'Montserrat', sans-serif;
+}
+
+.posts {
+    padding-left: 50px;
+}
+
+.feed__svg {
+    padding-left: 10px;
 }

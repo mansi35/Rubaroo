@@ -5,14 +5,16 @@ import Chat from "./Chat";
 
 function RightSideNavbar() {
     return (
-        <div className = "RightSideNavbar">
+        <div className = "chats">
             <div className="row" style={{ padding: 0, margin: 0 }}>
-                <div className="col-md-2" style={{ padding: 0 }}>
-                    <h2>Your Chats</h2>
+                <div className="col-md-3">
+                    <div className = "chat__header">
+                        <span><h3>Your Chats</h3></span>
+                    </div>
                     <Chat profilePic = "https://www.clipartkey.com/mpngs/m/106-1068026_clip-art-old-woman-old-woman-face-clipart.png" 
                     name = "granny1"
                     timestamp = "Today"
-                    message = "Hello there!"
+                    message = "Hello!"
                     />
 
                     <Chat profilePic = "https://clipart.world/wp-content/uploads/2020/06/happy-old-man-face.jpg"
