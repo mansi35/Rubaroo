@@ -1,5 +1,8 @@
-.organizationSearch__body {
+.organizationSearch {
     background-color: #FFDAB9;
+}
+
+.organizationSearch__body {
     height: 100%;
 }
 
@@ -38,4 +41,8 @@
     border: none;
     background-color: transparent;
     outline-width: 0;
+}
+
+.organizationSearch__sidebar {
+    padding: 0;
 }

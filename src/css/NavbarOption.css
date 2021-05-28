@@ -1,17 +1,17 @@
 .navbarOption {
     display: flex;
     align-items: center;
-    padding: 30px;
+    padding: 30px 10px;
     cursor: pointer;
 }
 
-.navbarOption > h2 {
-    margin-left: 20px;
-    font-weight: 400;
+.navbarOption > h5 {
     color: #2F2E41;
+    margin: 0;
 }
 
 .navbarOption > .MuiSvgIcon-root {
     font-size: xx-large;
     color: #F07167;
+    margin: 0 20px;
 }
