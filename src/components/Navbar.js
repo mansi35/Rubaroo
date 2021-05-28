@@ -1,5 +1,5 @@
 import React from 'react';
-import '../LeftSideNavbar.css';
+import '../css/Navbar.css';
 import NavbarOption from './NavbarOption';
 import {ReactComponent as Party} from '../svg/undraw_Party_re_nmwj.svg';
 

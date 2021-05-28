@@ -1,5 +1,5 @@
 import React from 'react'
-import '../RightSideNavbar.css'
+import '../css/Chats.css'
 
 function RightSideNavbar() {
     return (

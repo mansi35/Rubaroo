@@ -1,7 +1,5 @@
 import './App.css';
-import LeftSideNavbar from './components/Navbar';
-import RightSideNavbar from './components/Chats';
-import Feed from './components/Feed';
+import IndividualDashboard from "./pages/IndividualDashboard";
 import OrganizationSearch from './pages/OrganizationSearch';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -14,9 +12,7 @@ function App() {
             <OrganizationSearch />
           </Route>
           <Route path="/dashboard">
-            <LeftSideNavbar />
-            <Feed />
-            <RightSideNavbar />
+            <IndividualDashboard />
           </Route>
         </Switch>
       </Router>
