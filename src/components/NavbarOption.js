@@ -1,5 +1,5 @@
 import React from 'react';
-import './NavbarOption.css';
+import '../css/NavbarOption.css';
 
 function NavbarOption({ Icon, name }) {
     return (
