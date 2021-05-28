@@ -10,6 +10,8 @@ import ForgotPassword from './components/authentication/ForgotPassword';
 import { AuthProvider } from './contexts/AuthContext.js';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import UpdateProfile from './pages/UpdateProfile';
+import OrganizationDashboard from './pages/OrganizationDashboard';
 
 function App() {
   return (
