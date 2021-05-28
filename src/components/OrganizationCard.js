@@ -2,7 +2,7 @@ import { Avatar } from '@material-ui/core'
 import React from 'react'
 import '../css/OrganizationCard.css'
 
-function OrganizationCard() {
+function OrganizationCard({ id, emailAdd, name, profilePic }) {
     return (
         <div className="card"  style={{height: "fit-content"}}>
             <div className="card-header">
@@ -10,8 +10,8 @@ function OrganizationCard() {
             </div>
             <div className="card-body">
                 <div className='card-inline'>
-                    <Avatar src="" />&nbsp;&nbsp;
-                    <h5>Username</h5>
+                    <Avatar src={profilePic} />&nbsp;&nbsp;
+                    <h5>{name}</h5>
                 </div>
                 <button>Add Friend</button>
             </div>
