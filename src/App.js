@@ -1,13 +1,16 @@
 import './App.css';
-import SideNavbar from './components/Sidebar';
+import LeftSideNavbar from './components/LeftSidebar';
+import RightSideNavbar from './components/RightSideNavbar';
+import Feed from './components/Feed';
 import OrganizationSearch from './pages/OrganizationSearch';
 
 function App() {
   return (
     <div className="app">
       <OrganizationSearch />
-      <SideNavbar />
-      
+      <LeftSideNavbar />
+      <Feed />
+      <RightSideNavbar />
     </div>
   );
 }

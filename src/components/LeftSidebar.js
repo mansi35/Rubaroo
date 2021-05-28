@@ -1,5 +1,5 @@
 import React from 'react';
-import '../SideNavbar.css';
+import '../LeftSideNavbar.css';
 import NavbarOption from './NavbarOption';
 import {ReactComponent as Party} from '../svg/undraw_Party_re_nmwj.svg';
 
@@ -9,15 +9,16 @@ import LocalLibraryIcon from '@material-ui/icons/LocalLibrary';
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 
 
-function SideNavbar() {
+function SideNavbar({ options }) {
     return (
         <div className = "sideNavbar col-md-3">
             <h1>Rubaroo</h1> 
-            
-            <NavbarOption Icon = {VideoCallIcon} name = "Video Call" />
-            <NavbarOption Icon = {BookIcon} name = "Listen to a story" />
-            <NavbarOption Icon = {LocalLibraryIcon} name = "Library" />
-            <NavbarOption Icon = {InsertEmoticonIcon} name = "Watch Party" />
+
+            {options.map(option => {
+                return <NavbarOption 
+                    Icon = {option.Icon} 
+                    name = {option.name} />
+            })}
             
             <Party />
 
