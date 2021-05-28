@@ -1,8 +1,12 @@
-import { Avatar } from '@material-ui/core';
+import { Avatar, Button } from '@material-ui/core';
 import React from 'react';
 import "../css/ChatWindow.css";
 import SenderChatBubble from "./SenderChatBubble";
-// import ReceiverChatBubble from "./ReceiverChatBubble";
+import ReceiverChatBubble from "./ReceiverChatBubble";
+
+import MoodIcon from '@material-ui/icons/Mood';
+import MicNoneIcon from '@material-ui/icons/MicNone';
+import SendIcon from '@material-ui/icons/Send';
 
 function ChatWindow() {
     return (
@@ -18,11 +22,26 @@ function ChatWindow() {
                     <SenderChatBubble message = "Hello How are you?" />
                 </div>
 
-                {/* <ReceiverChatBubble message = "Hi" color = "#F07167" /> */}
+                <div className = "chat__content">
+                    <ReceiverChatBubble message = "Hi" />
+                </div>
+
+                <div className = "chat__content">
+                    <SenderChatBubble message = "Good." />
+                </div>
             </div>
 
             <div className = "chat__input">
-            
+                <MoodIcon />
+                <MicNoneIcon />
+                <div className = "message__input"> 
+                <form>
+                    <input type = "text"
+                        placeholder = "Enter your message"
+                    />
+                </form>
+                </div>
+                <button type = "submit"><SendIcon /></button>
             </div>
         </div>
     )

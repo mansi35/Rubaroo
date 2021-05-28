@@ -18,5 +18,40 @@
 }
 
 .chat__content {
+    padding: 5px;
+}
+
+.chat__input {
+    display: flex;
+    justify-content: space-evenly;
     padding: 10px;
+    align-items: center;
+}
+
+.message__input {
+    display: flex;
+    align-items: center;
+    background-color: #FFDAB9;
+    padding: 20px;
+    border-radius: 30px;
+    height: 45px;
+    border: #F08080 2px solid;
+}
+
+.message__input > form > input {
+    border: none;
+    background-color: transparent;
+    outline-width: 0;
+}
+
+.MuiSvgIcon-root {
+    color: white;
+    font-size: large;
+}
+
+.chat__input > button {
+    border: none;
+    background-color: transparent;
+    outline-width: 0;
+    align-items: center;
 }

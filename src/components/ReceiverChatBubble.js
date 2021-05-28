@@ -1,5 +1,5 @@
 import React from 'react';
-import "../css/ReceiverChatBubble";
+import "../css/ReceiverChatBubble.css";
 
 function ReceiverChatBubble({ message }) {
     return (
