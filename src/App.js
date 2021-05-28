@@ -9,6 +9,8 @@ import ForgotPassword from './components/authentication/ForgotPassword';
 import { AuthProvider } from './contexts/AuthContext.js';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import UpdateProfile from './pages/UpdateProfile';
+import OrganizationDashboard from './pages/OrganizationDashboard';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Switch>
             <PrivateRoute path="/institutions" component={OrganizationSearch} />
             <PrivateRoute path="/dashboard" component={IndividualDashboard} />
+            <PrivateRoute path="/update-profile" component={UpdateProfile} />
+            <PrivateRoute path="/organizationDashboard" component={OrganizationDashboard} />
             <Route path="/login">
               <LoginHeader />
               <Login />
