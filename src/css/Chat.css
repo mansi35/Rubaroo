@@ -1,0 +1,14 @@
+.chat {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.chat__top > h3 {
+    padding-left: 10px;
+    color: white;
+}
+
+.chat__bottom > p {
+    color: white;
+}
