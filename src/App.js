@@ -2,6 +2,7 @@ import './App.css';
 import PrivateRoute from './PrivateRoute.js';
 import IndividualDashboard from "./pages/IndividualDashboard";
 import Chat from "./pages/Chat";
+import Library from "./pages/Library";
 import OrganizationSearch from './pages/OrganizationSearch';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import LoginHeader from './components/authentication/LoginHeader';
@@ -22,6 +23,7 @@ function App() {
             <PrivateRoute path="/institutions" component={OrganizationSearch} />
             <PrivateRoute path="/dashboard" component={IndividualDashboard} />
             <PrivateRoute path="/chats" component={Chat} />
+            <PrivateRoute path="/library" component={Library} />
             <Route path="/login">
               <LoginHeader />
               <Login />

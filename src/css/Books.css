@@ -1,0 +1,36 @@
+.books {
+    padding: 40px;
+}
+
+.header__heading {
+    padding: 10px 0px;
+    color: #2F2E41;
+    font-weight: 400px;
+}
+
+.header__subheading {
+    color: #F07167;
+    padding-bottom: 30px;
+    padding-left: 10px; 
+}
+
+.book__recents {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 30px;
+}
+
+.books__popular {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 30px;
+}
+
+.books__bedtime {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 30px;
+}
