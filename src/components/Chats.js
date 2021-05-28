@@ -5,7 +5,7 @@ import Chat from "./Chat";
 
 function RightSideNavbar() {
     return (
-        <div className = "RightSideNavbar">
+        <div className = "RightSideNavbar col-md-3">
             <h2>Your Chats</h2>
             <Chat profilePic = "https://www.clipartkey.com/mpngs/m/106-1068026_clip-art-old-woman-old-woman-face-clipart.png" 
             name = "granny1"
