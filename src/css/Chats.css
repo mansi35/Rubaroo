@@ -1,7 +1,7 @@
 .chats {
     padding: 10px 10px;
     flex: 0.33;
-    background: #F07167;
+    background-color: #F07167;
 }
 
 .chats > h2 {
