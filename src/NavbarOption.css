@@ -1,0 +1,17 @@
+.navbarOption {
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    cursor: pointer;
+}
+
+.navbarOption > h2 {
+    margin-left: 20px;
+    font-weight: 400;
+    color: #2F2E41;
+}
+
+.navbarOption > .MuiSvgIcon-root {
+    font-size: xx-large;
+    color: #F07167;
+}
