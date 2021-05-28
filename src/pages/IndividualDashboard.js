@@ -29,7 +29,7 @@ function IndividualDashboard() {
     return (
         <div className = "individualDashboard">
             <div className="row" style={{ padding: 0, margin: 0 }}>
-                <div className="col-md-2" style={{ padding: 0 }}>
+                <div className="col-md-3" style={{ padding: 0 }}>
                     <Navbar options={navbarOptions} />
                 </div>
 

@@ -25,10 +25,10 @@ function OrganizationSearch() {
     return (
         <div className="organizationSearch">
             <div className="row" style={{ padding: 0, margin: 0 }}>
-                <div className="organizationSearch__sidebar col-md-2">
+                <div className="organizationSearch__sidebar col-md-3">
                     <Navbar options={navbarOptions} />
                 </div>
-                <div className="organizationSearch__body col-md-10">
+                <div className="organizationSearch__body col-md-9">
                     <div className="organizationSearch__header">
                         <div className="organizationSearch__headerText">
                             <h1>Hey there Username!</h1>
