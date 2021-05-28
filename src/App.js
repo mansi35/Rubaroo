@@ -3,14 +3,23 @@ import LeftSideNavbar from './components/Navbar';
 import RightSideNavbar from './components/Chats';
 import Feed from './components/Feed';
 import OrganizationSearch from './pages/OrganizationSearch';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
     <div className="app">
-      <OrganizationSearch />
-      <LeftSideNavbar />
-      <Feed />
-      <RightSideNavbar />
+      <Router>
+        <Switch>
+          <Route path="/institutions">
+            <OrganizationSearch />
+          </Route>
+          <Route path="/dashboard">
+            <LeftSideNavbar />
+            <Feed />
+            <RightSideNavbar />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

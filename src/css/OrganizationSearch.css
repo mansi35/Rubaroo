@@ -27,10 +27,11 @@
 .organizationSearch__searchbar {
     display: flex;
     align-items: center;
-    background-color: #eff2f5;
+    background-color: #FFDAB9;
     padding: 10px;
     border-radius: 30px;
     height: 45px;
+    border: #F08080 2px solid;
 }
 
 .organizationSearch__searchbar > input {
