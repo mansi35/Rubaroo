@@ -1,10 +1,15 @@
-import React from 'react'
+import React from 'react';
+import "../css/Post.css";
 
 function Post({ pic, author, title }) {
     return (
-        <div>
-            <img src = {pic} alt="" />
-            <h5>{ title } by {author}</h5>
+        <div className = "post">
+            <div className = "post__title">
+                <h5>{ title } by {author}</h5>
+            </div>
+            <div className = "post__pic">
+                <img src = {pic} />
+            </div>
         </div>
     )
 }

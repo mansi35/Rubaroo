@@ -12,7 +12,9 @@ function Chat({ profilePic, name, message, timestamp }) {
             <div className = "chat__bottom">
                 <p>{ timestamp }</p>
                 {/* <p>{new Date(timestamp?.toDate()).toUTCString()}</p> */}
-                <p>{ message }</p>
+                <div className = "message">
+                    <p>{ message }</p>
+                </div>
             </div>
         </div>
     )

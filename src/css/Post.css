@@ -1,0 +1,24 @@
+.post {
+    width: 666px;
+    height: 349px;
+    left: 399px;
+    top: 385px;
+
+    padding-top: 20px;
+    background: #F27E71;
+    box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
+
+.post__title > h5 {
+    padding: 10px;
+    padding-left: 20px;
+    font-weight: 400;
+}
+
+.post__pic > img {
+    padding-left: 50px;
+    border-radius: 20px;
+    width: 611px;
+    height: 247px;
+}
