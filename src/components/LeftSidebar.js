@@ -3,12 +3,6 @@ import '../LeftSideNavbar.css';
 import NavbarOption from './NavbarOption';
 import {ReactComponent as Party} from '../svg/undraw_Party_re_nmwj.svg';
 
-import VideoCallIcon from '@material-ui/icons/VideoCall';
-import BookIcon from '@material-ui/icons/Book';
-import LocalLibraryIcon from '@material-ui/icons/LocalLibrary';
-import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
-
-
 function SideNavbar({ options }) {
     return (
         <div className = "sideNavbar col-md-3">
