@@ -35,7 +35,7 @@ function Register() {
             if (auth.user) {
                 auth.user.updateProfile({
                     displayName: organizationName,
-                    photoURL: `https://avatars.dicebear.com/api/${seed}.svg`
+                    photoURL: `https://avatars.dicebear.com/api/avataaars/${seed}.svg`
                 })
                 db.collection('organizations').doc(auth.user.uid).set({
                     organizationName: organizationName,

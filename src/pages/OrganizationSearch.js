@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../css/OrganizationSearch.css'
 import SearchIcon from '@material-ui/icons/Search';
 import OrganizationCard from '../components/OrganizationCard';
@@ -9,6 +9,7 @@ import LocalLibraryIcon from '@material-ui/icons/LocalLibrary';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { useAuth } from '../contexts/AuthContext';
 import { useHistory } from 'react-router';
+import db from '../firebase';
 
 function OrganizationSearch() {
     const { currentUser, logout } = useAuth();
@@ -37,18 +38,18 @@ function OrganizationSearch() {
         }
     }
 
-    // const [users, setUsers] = useState([]);
+    const [organizations, setOrganizations] = useState([]);
 
-    // useEffect(() => {
-    //     db.collection("organizations")
-    //     .onSnapshot((snapshot) => 
-    //         setUsers(snapshot.docs.map((doc) => ({
-    //             organizationId: doc.id,
-    //             organization: doc.data()
-    //         })))
-    //     );
-    // // eslint-disable-next-line
-    // }, [])
+    useEffect(() => {
+        db.collection("organizations")
+        .onSnapshot((snapshot) => 
+            setOrganizations(snapshot.docs.map((doc) => ({
+                organizationId: doc.id,
+                organization: doc.data()
+            })))
+        );
+    // eslint-disable-next-line
+    }, [])
 
     return (
         <div className="organizationSearch">
@@ -71,21 +72,15 @@ function OrganizationSearch() {
                         </div>
                     </div>
                     <div className="organizationSearch__organizations">
-                        {/*{users.map(({ userId, user }) => (
+                        {organizations.map(({ organizationId, organization }) => (
                             <OrganizationCard 
                                 key = {organizationId}
                                 id = {organizationId}
                                 emailAdd = {organization.emailAdd}
-                                name = {organization.name}
+                                name = {organization.organizationName}
                                 profilePic = {organization.profilePic}
                             />
-                        ))}*/}
-                        <OrganizationCard />
-                        <OrganizationCard />
-                        <OrganizationCard />
-                        <OrganizationCard />
-                        <OrganizationCard />
-                        <OrganizationCard />
+                        ))}
                     </div>
                 </div>
             </div>
