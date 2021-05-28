@@ -4,7 +4,7 @@ import "../css/Chat.css";
 
 function Chat({ profilePic, name, message, timestamp }) {
     return (
-        <div class = "chat">
+        <div className = "chat">
             <div className = "chat__top">
                 <Avatar src = { profilePic } />
                 <h3>{ name }</h3>

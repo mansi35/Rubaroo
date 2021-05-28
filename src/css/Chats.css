@@ -1,7 +1,13 @@
 .chats {
-    padding: 10px 10px;
-    flex: 0.33;
     background-color: #F07167;
+    width: 573px;
+    height: 1024px;
+    left: 1102px;
+    top: 0px;
+
+    background-color: #F07167;
+    box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.35);
+    border-radius: 40px;
 }
 
 .chats > h2 {

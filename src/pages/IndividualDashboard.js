@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from "../components/Navbar";
 import Chats from "../components/Chats";
 import Feed from "../components/Feed";
+import "../css/IndividualDashboard.css";
 
 import VideoCallIcon from '@material-ui/icons/VideoCall';
 import BookIcon from '@material-ui/icons/Book';
@@ -35,9 +36,9 @@ function IndividualDashboard() {
                     <Navbar options={navbarOptions} />
                 </div>
 
-            <Feed />
-                {/* Feed */}
-
+                <div className = "col-md-8" style = {{ padding: 0 }}>
+                    <Feed />
+                </div>
                 <Chats />
             </div>
         </div>
