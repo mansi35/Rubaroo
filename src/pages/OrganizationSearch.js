@@ -6,8 +6,13 @@ import Navbar from "../components/Navbar";
 import VideoCallIcon from '@material-ui/icons/VideoCall';
 import BookIcon from '@material-ui/icons/Book';
 import LocalLibraryIcon from '@material-ui/icons/LocalLibrary';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import { useAuth } from '../contexts/AuthContext';
+import { useHistory } from 'react-router';
 
 function OrganizationSearch() {
+    const { currentUser, logout } = useAuth();
+    const history = useHistory();
     const navbarOptions = [
         {
             Icon: VideoCallIcon,
@@ -22,6 +27,29 @@ function OrganizationSearch() {
             name: "Mutual Friends"
         },
     ]
+
+    async function handleSubmit() {
+        try {
+            await logout();
+            history.push("/login");
+        } catch {
+            alert("Failed to log out");
+        }
+    }
+
+    // const [users, setUsers] = useState([]);
+
+    // useEffect(() => {
+    //     db.collection("organizations")
+    //     .onSnapshot((snapshot) => 
+    //         setUsers(snapshot.docs.map((doc) => ({
+    //             organizationId: doc.id,
+    //             organization: doc.data()
+    //         })))
+    //     );
+    // // eslint-disable-next-line
+    // }, [])
+
     return (
         <div className="organizationSearch">
             <div className="row" style={{ padding: 0, margin: 0 }}>
@@ -31,15 +59,27 @@ function OrganizationSearch() {
                 <div className="organizationSearch__body col-md-9">
                     <div className="organizationSearch__header">
                         <div className="organizationSearch__headerText">
-                            <h1>Hey there Username!</h1>
+                            <h1>Hey there {currentUser.displayName}!</h1>
                             <h6>Let's get your organization social!</h6>
                         </div>
                         <div className="organizationSearch__searchbar">
                             <SearchIcon />
                             <input type="text" placeholder="Search for Organizations" />
                         </div>
+                        <div onClick={handleSubmit} style={{cursor: "pointer"}}>
+                            <ExitToAppIcon id="logOut"   style={{outline: "none"}} />
+                        </div>
                     </div>
                     <div className="organizationSearch__organizations">
+                        {/*{users.map(({ userId, user }) => (
+                            <OrganizationCard 
+                                key = {organizationId}
+                                id = {organizationId}
+                                emailAdd = {organization.emailAdd}
+                                name = {organization.name}
+                                profilePic = {organization.profilePic}
+                            />
+                        ))}*/}
                         <OrganizationCard />
                         <OrganizationCard />
                         <OrganizationCard />

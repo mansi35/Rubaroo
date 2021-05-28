@@ -37,7 +37,7 @@ function Register() {
                     displayName: organizationName,
                     photoURL: `https://avatars.dicebear.com/api/${seed}.svg`
                 })
-                db.collection('users').doc(auth.user.uid).set({
+                db.collection('organizations').doc(auth.user.uid).set({
                     organizationName: organizationName,
                     emailAdd: email,
                     phoneNumber: phone,
