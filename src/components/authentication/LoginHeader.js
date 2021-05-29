@@ -12,10 +12,14 @@ function LoginHeader() {
                     <Col xs={8} md={12} className="header__left">
                         
                     </Col>
-                    <Col xs={8} md={6} className="d-none d-md-block">
-                        <Link className="/register" to="/register">
-                            <button className="header__button">Connecting souls</button>
-                        </Link>
+                    <Col xs={8} md={12} className="d-none d-md-block">
+                        <div class = "app__header">
+                            <h1>Roobaroo</h1>
+                        </div>
+
+                        <div className = "app__subheader">
+                            <p>Come, let's connect :)</p>
+                        </div>
                     </Col>
                 </Row>
             </Container>
