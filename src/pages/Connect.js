@@ -54,7 +54,7 @@ function Connect() {
             const querySnapshot = await db.collection("organizations").where("organizationName", "==", org).get();
             // a.then((querySnapshot) => {
                 
-            const snapshot = await db.collection("organizations").doc(querySnapshot[0].id).collection('friendOrganizations').get();
+            const snapshot = await db.collection("organizations").doc(querySnapshot[0].uid).collection('friendOrganizations').get();
                     
             snapshot.forEach((docc) => {
                 setFriends(friends => [...friends, docc.data().friendName]);
