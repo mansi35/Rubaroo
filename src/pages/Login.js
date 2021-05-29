@@ -23,7 +23,7 @@ function Login() {
           setLoading(true);
           const auth = await login(email);
           console.log(auth);
-          history.push("/");
+          history.push("/dashboard");
         } catch {
           setError("Failed to log in");
         }

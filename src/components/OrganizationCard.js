@@ -9,6 +9,7 @@ import likeIcon from '../resources/like-16x16(1).png';
 function OrganizationCard({ id, emailAdd, name, profilePic, category, noUsers }) {
     const {currentUser} = useAuth();
     const [alreadyFriend, setAlreadyFriend] = useState(false);
+    const [requestSent, setRequestSent] = useState(false);
     const [myCategory, setMyCategory] = useState('');
     const [myPopulation, setMyPopulation] = useState('');
 
@@ -16,6 +17,11 @@ function OrganizationCard({ id, emailAdd, name, profilePic, category, noUsers })
         db.collection('organizations').doc(currentUser.uid).collection("friendOrganizations").doc(id).get().then((doc) => {
             if (doc.exists) {
                 setAlreadyFriend(true);
+            }
+        })
+        db.collection('organizations').doc(id).collection("friendRequests").doc(currentUser.uid).get().then((doc) => {
+            if (doc.exists) {
+                setRequestSent(true);
             }
         })
     // eslint-disable-next-line
@@ -60,7 +66,25 @@ function OrganizationCard({ id, emailAdd, name, profilePic, category, noUsers })
                 </div>
                 <p><span><img src={likeIcon} alt="like" style={{height:16, width:16, marginRight:10}} /></span>{category} - {noUsers} users</p>
                 <p><span><img src={emailIcon} alt="email" style={{height:22, width:22, marginRight:5}} /></span>{emailAdd}</p>
-                {alreadyFriend? <p><br />👩🏻‍🤝‍🧑🏻 Friends</p>: <button onClick={sendRequest}>Add Friend</button>}
+                {
+                    (()=>{
+                        if (alreadyFriend) {
+                            return (
+                                <p><br />👩🏻‍🤝‍🧑🏻 Friends</p>
+                            )
+                        }
+                        else if (requestSent) {
+                            return (
+                                <p><br />Friend Request Sent!</p>
+                            )
+                        }
+                        else {
+                            return (
+                                <button onClick={sendRequest}>Add Friend</button>
+                            )
+                        }
+                    })()
+                }
             </div>
         </div>
     )

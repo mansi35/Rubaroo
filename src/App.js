@@ -13,6 +13,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import UpdateProfile from './pages/UpdateProfile';
 import OrganizationDashboard from './pages/OrganizationDashboard';
+import Connect from './pages/Connect';
 import VideoCall from './pages/VideoCall';
 
 function App() {
@@ -23,7 +24,10 @@ function App() {
           <Switch>
             <PrivateRoute path="/institutions" component={OrganizationSearch} />
             <PrivateRoute path="/dashboard" component={IndividualDashboard} />
+            <PrivateRoute path="/organizationDashboard" component={OrganizationDashboard} />
+            <PrivateRoute path="/update-profile" component={UpdateProfile} />
             <PrivateRoute path="/chats" component={Chat} />
+            <PrivateRoute path="/connect" component={Connect} />
             <PrivateRoute path="/library" component={Library} />
             <PrivateRoute path = "/videocall" component={VideoCall} />
             <Route path="/login">
