@@ -13,6 +13,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import UpdateProfile from './pages/UpdateProfile';
 import OrganizationDashboard from './pages/OrganizationDashboard';
+import VideoCall from './pages/VideoCall';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <PrivateRoute path="/dashboard" component={IndividualDashboard} />
             <PrivateRoute path="/chats" component={Chat} />
             <PrivateRoute path="/library" component={Library} />
+            <PrivateRoute path = "/videocall" component={VideoCall} />
             <Route path="/login">
               <LoginHeader />
               <Login />

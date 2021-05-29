@@ -1,15 +1,23 @@
 import React from 'react';
-import "../css/VideoCall.css";
+import "../css/VideoCallPage.css";
 import CallNavbar from "../components/CallNavbar";
 import Video from "../components/Video";
-import Controls from "../components"; 
+import CallControls from "../components/CallControls"; 
 
 function VideoCall() {
     return (
         <div className = "videoCall">
-            <CallNavbar />
-            <Video />
-            <Controls />
+            <div className = "videoCall__navbar">
+                <CallNavbar />
+            </div>
+            
+            <div className = "videoCall__video">
+                <Video />
+            </div> 
+
+            <div className = "videoCall__controls">
+                <CallControls />
+            </div>
         </div>
     )
 }
