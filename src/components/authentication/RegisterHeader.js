@@ -40,7 +40,7 @@ function RegisterHeader() {
                         <p className="header__text">Already signed up? Log in</p>
                         <form>
                             <input onChange={(e) => setEmail(e.target.value)} className="header__input1" type="email" placeholder="Email Address" />
-                            <input onChange={(e) => setPassword(e.target.value)} className="header__input2" type="password" placeholder="Password" />
+                            
                             <button disabled={loading} type="submit" onClick={handleSubmit} className="header__submit">Log In</button>
                         </form>
                         <center>

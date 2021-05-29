@@ -79,17 +79,15 @@ function Register() {
                             <input onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email" />
                         </center>
                         <center>
-                            <input onChange={(e) => setPhoneNumber(e.target.value)} type="tel" placeholder="Mobile Number" />
+                            <input onChange={(e) => setPhoneNumber(e.target.value)} type="tel" placeholder="Contact Number" />
                         </center>
                         <center>
-                            <input onChange={(e) => setNoUsers(e.target.value)} type="numeric" placeholder="No. of Users in Organization" />
+                            <input onChange={(e) => setNoUsers(e.target.value)} type="numeric" placeholder="Organization Address" />
                         </center>
                         <center>
-                            <input onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" />
+                            <input onChange={(e) => setNoUsers(e.target.value)} type="numeric" placeholder="No. of children/ older people" />
                         </center>
-                        <center>
-                            <input onChange={(e) => setConfirmPassword(e.target.value)} type="password" placeholder="Confirm Password" />
-                        </center>
+                        
                         <center>
                             <div onChange={(e) => setCategory(e.target.value)} className="register__radiocontainer">
                                 <input type="radio" name="category" value="Orphanage" />
