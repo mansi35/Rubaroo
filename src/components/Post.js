@@ -8,7 +8,7 @@ function Post({ pic, author, title }) {
                 <h5>{ title } by {author}</h5>
             </div>
             <div className = "post__pic">
-                <img src = {pic} />
+                <img src = {pic} alt="" />
             </div>
         </div>
     )

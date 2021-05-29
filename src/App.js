@@ -12,6 +12,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import UpdateProfile from './pages/UpdateProfile';
 import OrganizationDashboard from './pages/OrganizationDashboard';
+import Connect from './pages/Connect';
 
 function App() {
   return (
@@ -21,7 +22,10 @@ function App() {
           <Switch>
             <PrivateRoute path="/institutions" component={OrganizationSearch} />
             <PrivateRoute path="/dashboard" component={IndividualDashboard} />
+            <PrivateRoute path="/organizationDashboard" component={OrganizationDashboard} />
+            <PrivateRoute path="/update-profile" component={UpdateProfile} />
             <PrivateRoute path="/chats" component={Chat} />
+            <PrivateRoute path="/connect" component={Connect} />
             <Route path="/login">
               <LoginHeader />
               <Login />

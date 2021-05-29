@@ -1,15 +1,16 @@
 import React from 'react';
 import Post from "./Post";
 import "../css/Feed.css";
-import {ReactComponent as Party} from '../svg/undraw_Party_re_nmwj.svg';
+import { useAuth } from '../contexts/AuthContext';
 
 function Feed() {
+    const { currentUser } = useAuth();
     return (
         <div className = "feed">
             <div className="row" style={{ padding: 0, margin: 0 }}>
                 <div className="col-md-7" style={{ paddingTop: 20 }}>
                     <div className = "feed__header">
-                        <h2>Hey, there <strong>User</strong>! </h2>
+                        <h2>Hey, there <strong>{currentUser.displayName}</strong>! </h2>
                     </div>
                     <div className = "feed__subheader">
                         <h6>World’s a party with you in it! What do you want to do today?</h6>
