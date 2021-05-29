@@ -20,7 +20,7 @@ function CallControls() {
             <div className = "send_reaction"> 
                 <input type="text" placeholder="Send reaction... " />
                 <div className = "emojis">
-                    <>
+                    <ControlIcon Icon = {ThumbUpAltOutlinedIcon} />
                     <SentimentVerySatisfiedOutlinedIcon />
                     <SentimentSatisfiedOutlinedIcon />
                     <FavoriteOutlinedIcon />
