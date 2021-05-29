@@ -16,6 +16,7 @@ import OrganizationDashboard from './pages/OrganizationDashboard';
 import Connect from './pages/Connect';
 import VideoCall from './pages/VideoCall';
 import MyChatEmpty from './components/chat/MyChatEmpty';
+import Room from './components/videocall/Room';
 
 function App() {
   return (
@@ -31,7 +32,8 @@ function App() {
             <PrivateRoute path="/library" component={Library} />
             <PrivateRoute path = "/videocall" component={VideoCall} />
             <PrivateRoute path="/chat/rooms/:roomId/:roomType" component={MyChat} />
-          <PrivateRoute path="/chat" component={MyChatEmpty} />
+            <PrivateRoute path="/chat" component={MyChatEmpty} />
+            <PrivateRoute path="/room/:roomID" component={Room} />
             <Route path="/login">
               <LoginHeader />
               <Login />
