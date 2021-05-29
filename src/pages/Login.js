@@ -47,7 +47,6 @@ function Login() {
                             <form>
                                 
                                     <input onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter your email" />
-
                                 
                                 <center>
                                     <div className = "login__buttons">

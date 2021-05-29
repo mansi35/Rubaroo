@@ -11,6 +11,10 @@ import SportsEsportsOutlinedIcon from '@material-ui/icons/SportsEsportsOutlined'
 import VideoCallOutlinedIcon from '@material-ui/icons/VideoCallOutlined';
 
 function ChatWindow() {
+    // async listenInput(event) {
+
+    // }
+
     return (
         <div className = "chatWindow">
             <div className = "chat__header">
