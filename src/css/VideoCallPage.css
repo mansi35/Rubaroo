@@ -2,3 +2,13 @@
     display: flex;
     flex-direction: column;
 }
+
+.videoCall__navbar {
+    padding-bottom: 30px;
+}
+
+.videoCall__video {
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}

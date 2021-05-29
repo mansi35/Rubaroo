@@ -1,0 +1,12 @@
+.video {
+    display: block;
+    justify-content: center;
+    width: 80%;
+    height: 600px;
+    left: 80px;
+    top: 125px;
+    background: #F9DCC4;
+    box-shadow: 10px 10px 5px grey;
+    border: 30px solid #F27E71;
+    border-radius: 20px;
+}

@@ -1,0 +1,8 @@
+.controlIcons {
+    display:flex;
+    padding: 10px;
+}
+
+.controlIcons:hover {
+    border-radius: 20px;
+}

@@ -17,14 +17,13 @@ function CallControls() {
         <div className = "callControls">
             <div className = "send_reaction"> 
                 <input type="text" placeholder="Send reaction... " />
-            </div>
-
-            <div className = "emojis">
-                <ThumbUpAltOutlinedIcon size = "large"/>
-                <SentimentVerySatisfiedOutlinedIcon />
-                <SentimentSatisfiedOutlinedIcon />
-                <FavoriteOutlinedIcon />
-                <GradeOutlinedIcon />
+                <div className = "emojis">
+                    <ThumbUpAltOutlinedIcon size = "large"/>
+                    <SentimentVerySatisfiedOutlinedIcon />
+                    <SentimentSatisfiedOutlinedIcon />
+                    <FavoriteOutlinedIcon />
+                    <GradeOutlinedIcon />
+                </div>
             </div>
 
             <div className = "options">
