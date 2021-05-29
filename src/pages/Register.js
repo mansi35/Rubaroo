@@ -185,12 +185,47 @@ function Register() {
                         <center>
                             <input required onChange={(e) => setConfirmPassword(e.target.value)} type="password" placeholder="Confirm Password" />
                         </center>
+                        
                         <center>
                             <div required onChange={(e) => setCategory(e.target.value)} className="register__radiocontainer">
                                 <input type="radio" name="category" value="Orphanage" />
                                 <label>Orphanage</label>
                                 <input type="radio" name="category" value="Old Age Home" />
                                 <label>Old Age Home</label>
+                            </div>
+                        </center>
+                        <center>
+                        <p className="register__policy">
+                            By clicking sign up, you agree to our{" "}
+                            <span>Terms, Data Policy</span> and <span>Cookie Policy</span>. You 
+                            may recieve SMS notifications from us and can opt out at any time.
+                        </p>
+                        </center>
+
+                        <center>
+                            <button disabled={loading} onClick={register} type="submit" className="register__register">Sign Up</button>
+                        </center>
+                    </form>
+                </div>
+                <div className="register__container">
+                    <h1>Come join us</h1>
+                    <h3>We love you!</h3>
+                    {error && <Alert variant="danger">{error}</Alert>}
+                    <form>
+                        <center>
+                            <input onChange={(e) => setOrganizationName(e.target.value)} type="name" placeholder="UserName" />
+                        </center>
+                        <center>
+                            <input onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email" />
+                        </center>
+                        
+                        
+                        <center>
+                            <div onChange={(e) => setCategory(e.target.value)} className="register__radiocontainer">
+                                <input type="radio" name="category" value="Orphanage" />
+                                <label>Child</label>
+                                <input type="radio" name="category" value="Old Age Home" />
+                                <label>elder</label>
                             </div>
                         </center>
                         <center>

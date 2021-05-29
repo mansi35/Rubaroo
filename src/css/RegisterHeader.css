@@ -10,6 +10,32 @@ body {
     background-repeat: no-repeat;
 }
 
+.app__header {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.app__header > h1 {
+    color: #2F2E41;
+    font-weight: 700;
+    font-family: 'poppins-bold', sans-serif;
+    font-size: 64px;
+}
+
+.app__subheader {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.app__subheader > p {
+    color: #F08080;
+    font-family: 'poppins-bold' sans-serif;
+    font-size: 34px;
+    font-weight: 550;
+}
+
 .header__bg {
     height: 100vh;
     width: 100vw;

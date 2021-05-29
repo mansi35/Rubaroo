@@ -1,7 +1,9 @@
 .login {
     font-family: Poppins;
-    height: auto;
     display: flex;
+    align-items: center;
+    padding-left: 200px;
+    padding-right: 200px;
 }
 
 
@@ -12,57 +14,66 @@
 }
 
 .login__container {
+    /* align-items: center;
     width: 75%;
     height: 65%;
     display :flex;
     padding: 10px;
-    background-color: rgba(255, 227, 254, 0.38);
+    background-color: rgb(216, 23, 216);
     flex-direction: column;
     margin-top: 80px;
     margin-left: 15%;
-    border-radius: 20px;
+    border-radius: 20px; */
+    display: flex;
+    flex-direction: column;
+    background-color: #F08080;
+    border-radius: 30px;
+    width: 50%;
+    padding: 20px;
 }
 
-.login__container > h3 {
-    font-weight: 330;
-    color:black;
-    font-size: 25px;
-    margin-top: 20px;
+
+.login__header > h3 {
+    font-family: 'poppins-bold', sans-serif;
+    font-weight: 600;
+    color: #FFDAB9;
+    font-size: 45px;
     margin-bottom: 20px;
     text-align: center;
 }
 
-.login__container > form > center > input {
-    height: 33px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    background-color: white;
-    width: 92%;
-    border: 0.5px solid gray;
-    border-radius: 5px;
+.login__container > form > input {
+    height: 100%;
+    width: 100%;
+    margin-bottom: 20px;
+    background-color:#FFDAB9;
+    border: none;
+    border-radius: 30px;
+    outline-width: 0px;
+    padding: 15px;
+    align-items: center;
 }
 
-.login__container > form > center > input::-webkit-input-placeholder {
+.login__container > form > input::-webkit-input-placeholder {
     font-size: 22px;
-    color: rgb(170, 170, 170);
-    padding-left: 10px;
-    padding-top: 40px;
+    color: #F08080;
 }
 
 .login__login {
-    background-color: #440a67;;
+    background-color: #FFDAB9;
     border: none;
-    width: 196px;
-    height: 38px;
-    border-radius: 3px;
-    border: 1px sollid #440a67;
-    color: white;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 30px;
+    border: 1px solid #F08080;
+    color: #F08080;
     font-size: 17px;
     font-weight: 700;
+    padding: 5px 30px;
+    align-items: center;
 }
 
 .login__container > form > center > hr {
-    margin: 25px 30%;
     color: rgb(221, 221, 221);
     border: 1px solid;
     width: 20%;
@@ -76,14 +87,44 @@
 }
 
 .login__createNewAccount {
-    width: 185px;
+    /* width: 185px;
     height: 43px;
     color: #ffffff;
     border-radius: 2px;
-    background-color: #440a67;;
+    background-color: pink;;
     border: none;
-    margin-top: 10px;
-    font-family: poppins-bold;
+    margin-top: 10px;*/
+    font-family: 'poppins-bold' sans-serif;
+    font-weight: 700;
+    background-color: #FFDAB9;
+    border-radius: 30px;
+    color: #F08080;
+    padding: 5px 20px;
+    outline-width: 0px;
+    border: none;
 }
 
+.login__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.loginsocial__header > h4 {
+    font-family: 'poppins-bold' sans-serif;
+    font-weight: 500;
+    color: #FFDAB9;
+}
+
+.loginsocial__icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.loginsocial__icons > img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+}
 

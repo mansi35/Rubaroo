@@ -2,6 +2,7 @@ import './App.css';
 import PrivateRoute from './PrivateRoute.js';
 import IndividualDashboard from "./pages/IndividualDashboard";
 import Chat from "./pages/Chat";
+import Library from "./pages/Library";
 import OrganizationSearch from './pages/OrganizationSearch';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import LoginHeader from './components/authentication/LoginHeader';
@@ -13,6 +14,7 @@ import Register from './pages/Register';
 import UpdateProfile from './pages/UpdateProfile';
 import OrganizationDashboard from './pages/OrganizationDashboard';
 import Connect from './pages/Connect';
+import VideoCall from './pages/VideoCall';
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
             <PrivateRoute path="/update-profile" component={UpdateProfile} />
             <PrivateRoute path="/chats" component={Chat} />
             <PrivateRoute path="/connect" component={Connect} />
+            <PrivateRoute path="/library" component={Library} />
+            <PrivateRoute path = "/videocall" component={VideoCall} />
             <Route path="/login">
               <LoginHeader />
               <Login />

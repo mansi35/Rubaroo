@@ -4,17 +4,55 @@
 .chat__header {
     display: flex;
     border-radius: 20px;
+    align-items: center;
+    justify-content: space-between;
     /* box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.25); */
     padding: 20px;   
 }
 
-.chat__header > h3 {
+.pic__name {
+    display: flex;
+}
+
+.chat__trivia {
+    display: flex;
+
+}
+
+.chat__videocall {
+    float: right;
+    display: flex;
+    border-radius: 40px;
+    align-items: center;
+    padding: 10px;
+}
+
+.chat__gaming {
+    float: right;
+    display: flex;
+    border-radius: 40px;
+    align-items: center;
+    padding: 10px;
+}
+
+
+.pic__name > h3 {
     padding-left: 20px;
     color: #ffffff;
 }
 
 .chat__body {
     background-image: url(https://as1.ftcdn.net/jpg/02/29/17/96/500_F_229179630_lmucG4IwB0e1OzfdD1w4HQEntW6GUaZ5.jpg);
+}
+
+.chat__time {
+    position: relative;
+    float: center;
+    width: fit-content;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    background-color: #e46b5d;
+    padding: 5px;
 }
 
 .chat__content {
@@ -46,7 +84,7 @@
 
 .MuiSvgIcon-root {
     color: white;
-    font-size: large;
+    font-size: 200%;
 }
 
 .chat__input > button {

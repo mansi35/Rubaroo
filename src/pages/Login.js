@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import { useAuth } from "../contexts/AuthContext";
 
+import { ReactComponent as Connect } from "../svg/undraw_join_of2w.svg";
+
 function Login() {
     const [email, setEmail] = useState('');
     const history = useHistory('');
@@ -19,7 +21,7 @@ function Login() {
         try {
           setError("");
           setLoading(true);
-          const auth = await login(email, password);
+          const auth = await login(email);
           console.log(auth);
           history.push("/dashboard");
         } catch {
@@ -31,40 +33,50 @@ function Login() {
 
     return (
         <div className="login">
-            <Container fluid> 
+            <Container fluid>
+            
                 <Row>
-                    <Col xs={12} md={6} className="login__left">
+                    <Col xs={6} md={6} className="login__left">
                     </Col>
-                    <Col xs={12} md={6}>
+                    <Col xs={6} md={12}>
                         <div className="login__container">
-                            <h3>Log In To FAMista!</h3>
+                            {/* <div className= "login__header">
+                                <h3>Rubaroo</h3>
+                            </div> */}
                             {error && <Alert variant="danger">{error}</Alert>}
                             <form>
+                                
+                                    <input onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter your email" />
+
+                                
                                 <center>
-                                    <input onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email" />
+                                    <div className = "login__buttons">
+                                        <button disabled={loading} type="submit" onClick={handleSubmit} className="login__login mb-3">Log In</button>
+                                        <Link to="/register">
+                                            <button className="login__createNewAccount">Register</button>
+                                        </Link>
+                                    </div>
                                 </center>
-                                <center>
-                                    <input onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" />
-                                </center>
-                                <center>
-                                    <button disabled={loading} type="submit" onClick={handleSubmit} className="login__login mb-3">Log In</button>
-                                </center>
-                                <center>
-                                    <Link to="/forgot-password"><h6>Forgot Password</h6></Link>
-                                </center>
+                                
                                 <center>
                                     <hr />
                                 </center>
+
                                 <center>
-                                    <Link to="/register">
-                                        <button className="login__createNewAccount">Create New Account</button>
-                                    </Link>
+                                    <div className = "loginsocial__header">
+                                        <h4>Login with</h4>
+                                    </div>
+                                    <div className = "loginsocial__icons">
+                                    <img src = "https://upload.wikimedia.org/wikipedia/commons/8/84/FaceB.png" alt = "facebook" />
+                                    <img alt = "google" src = "https://image.similarpng.com/thumbnail/2020/12/Flat-design-Google-logo-design-Vector-PNG.png" />
+                                    </div>
                                 </center>
                             </form>
                         </div>
                     </Col>
                 </Row>
             </Container>
+            <Connect />
         </div>
     )
 }

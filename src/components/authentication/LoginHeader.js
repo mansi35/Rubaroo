@@ -9,13 +9,17 @@ function LoginHeader() {
             <div className="register__header">
             <Container fluid>
                 <Row>
-                    <Col xs={12} md={6} className="header__left">
+                    <Col xs={8} md={12} className="header__left">
                         
                     </Col>
-                    <Col xs={12} md={6} className="d-none d-md-block">
-                        <Link className="/register" to="/register">
-                            <button className="header__button">Create New Account</button>
-                        </Link>
+                    <Col xs={8} md={12} className="d-none d-md-block">
+                        <div class = "app__header">
+                            <h1>Roobaroo</h1>
+                        </div>
+
+                        <div className = "app__subheader">
+                            <p>Come, let's connect :)</p>
+                        </div>
                     </Col>
                 </Row>
             </Container>

@@ -1,0 +1,39 @@
+.callControls {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+    padding: 5px;
+}
+
+.send_reaction {
+    height: fit-content;
+    width: fit-content;
+    border: 2px solid #F27E71;
+    border-radius: 100px;
+    z-index: 100;
+    margin-bottom: 30px;
+    padding: 2px;
+}
+
+.emojis {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-left: 20px;
+}
+
+.MuiSvgIcon-root {
+    font-size: 200%;
+    color: #F27E71;
+}
+
+.send_reaction > input {
+    background-color: transparent;
+    outline-width: 0;
+    border: none;
+    padding: 10px;
+}
+
+.options {
+    padding-left: 20px;
+}
