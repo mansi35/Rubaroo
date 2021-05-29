@@ -7,6 +7,7 @@ import BookIcon from '@material-ui/icons/Book';
 import LocalLibraryIcon from '@material-ui/icons/LocalLibrary';
 import EmojiEmotionsOutlinedIcon from '@material-ui/icons/EmojiEmotionsOutlined';
 import Sidebar from '../components/chat/Sidebar';
+import ForumOutlinedIcon from '@material-ui/icons/ForumOutlined';
 
 const navbarOptions = [
     {

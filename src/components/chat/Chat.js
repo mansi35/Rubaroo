@@ -20,6 +20,75 @@ function Chat() {
     const {currentUser} = useAuth();
     var [id, setId] = useState('');
 
+    async function listenMessage() {
+        alert("clicked!");
+        const accessToken = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlFVUTRNemhDUVVWQk1rTkJNemszUTBNMlFVVTRRekkyUmpWQ056VTJRelUxUTBVeE5EZzFNUSJ9.eyJodHRwczovL3BsYXRmb3JtLnN5bWJsLmFpL3VzZXJJZCI6IjQ2Mjg3MTYxODMzNTUzOTIiLCJpc3MiOiJodHRwczovL2RpcmVjdC1wbGF0Zm9ybS5hdXRoMC5jb20vIiwic3ViIjoiN2R4bktnVFh6UUJWSXdWZzFJU2FXUGlwUHgyS1NsN1hAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vcGxhdGZvcm0ucmFtbWVyLmFpIiwiaWF0IjoxNjIyMjk4MDIzLCJleHAiOjE2MjIzODQ0MjMsImF6cCI6IjdkeG5LZ1RYelFCVkl3VmcxSVNhV1BpcFB4MktTbDdYIiwiZ3R5IjoiY2xpZW50LWNyZWRlbnRpYWxzIn0.PKOU3ZMaZ3u7ZW4GbgBEzr4-h1Ks2uFCnu9OTX8McqLj_p7drJoZXEpHyFENdCu1eRTwYccqvq0qnpJ7_MLP0VOvaD429ZA_W3PMBuBH98P_jUKf6NPzRcZBU_It8WFBNPYIcR7dGpxh7XyXujcHI-SMzUqUZeO9Nw1QEnKNgXPRjhCkA2GcyPLcviK-r49I5Bql0bI90NB3u6PmFbBNBY1iKvKh1_KDpd0ZQRyhTthJAz_f3XxHq6v80J3c5NkRO9A_MmeAjcJtXDntU0oAGO1LS_bY1E7Oz5KtWZj2-lw_TLg0yr3KRBeRa5RP_Cr1C6V5UTsQx-F72b8y4XHUrw";
+        const uniqueMeetingId = btoa("user@example.com");
+        const symblEndpoint = `wss://api.symbl.ai/v1/realtime/insights/${uniqueMeetingId}?access_token=${accessToken}`;
+
+        const ws = new WebSocket(symblEndpoint);
+        alert("Socket opened!")
+
+        ws.onmessage = (event) => {
+            // You can find the conversationId in event.message.data.conversationId;
+            const data = JSON.parse(event.data);
+            
+            if (data.type === 'message' && data.message.hasOwnProperty('punctuated')) { // Speech to text
+                console.log('Speech To Text: ', data.message.punctuated.transcript)
+            }
+
+            // alert(`Response type: ${data.type}. Object: `, data);
+        }
+
+        ws.onopen = (event) => {
+            ws.send(JSON.stringify({
+              type: 'start_request',
+              meetingTitle: 'Websockets How-to', // Conversation name
+              insightTypes: ['question', 'action_item'], // Will enable insight generation
+              config: {
+                confidenceThreshold: 0.5,
+                languageCode: 'en-US',
+                speechRecognition: {
+                  encoding: 'LINEAR16',
+                  sampleRateHertz: 44100,
+                }
+              },
+              speaker: {
+                userId: 'example@symbl.ai',
+                name: 'Example Sample',
+              }
+            }));
+        };
+
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true, video: false });
+
+        const handleSuccess = (stream) => {
+        const AudioContext = window.AudioContext;
+        const context = new AudioContext();
+        const source = context.createMediaStreamSource(stream);
+        const processor = context.createScriptProcessor(1024, 1, 1);
+        const gainNode = context.createGain();
+        source.connect(gainNode);
+        gainNode.connect(processor);
+        processor.connect(context.destination);
+        processor.onaudioprocess = (e) => {
+            // convert to 16-bit payload
+            const inputData = e.inputBuffer.getChannelData(0) || new Float32Array(this.bufferSize);
+            const targetBuffer = new Int16Array(inputData.length);
+            for (let index = inputData.length; index > 0; index--) {
+                targetBuffer[index] = 32767 * Math.min(1, inputData[index]);
+            }
+            // Send audio stream to websocket.
+            if (ws.readyState === WebSocket.OPEN) {
+            ws.send(targetBuffer.buffer);
+            }
+        };
+        };
+
+
+    handleSuccess(stream);
+    }
+
     useEffect(() => {
         console.log(roomId, roomType)
         if (roomId) {
@@ -125,7 +194,7 @@ function Chat() {
                     <input value={input} onChange={(e) => setInput(e.target.value)} type="text" placeholder="Type a message"/>
                     <button type="submit" onClick={sendMessage}> Send a Message</button>
                 </form>
-                <MicIcon fontSize="large" style={{color: '#eff2f5'}}/>
+                <button onClick = {listenMessage}><MicIcon fontSize="large" style={{color: '#eff2f5'}}  /></button>
             </div>
         </div>
     )
