@@ -1,6 +1,8 @@
 import './App.css';
 import PrivateRoute from './PrivateRoute.js';
 import IndividualDashboard from "./pages/IndividualDashboard";
+import Chat from "./pages/Chat";
+import Library from "./pages/Library";
 import OrganizationSearch from './pages/OrganizationSearch';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import LoginHeader from './components/authentication/LoginHeader';
@@ -9,6 +11,8 @@ import ForgotPassword from './components/authentication/ForgotPassword';
 import { AuthProvider } from './contexts/AuthContext.js';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import UpdateProfile from './pages/UpdateProfile';
+import OrganizationDashboard from './pages/OrganizationDashboard';
 
 function App() {
   return (
@@ -18,6 +22,8 @@ function App() {
           <Switch>
             <PrivateRoute path="/institutions" component={OrganizationSearch} />
             <PrivateRoute path="/dashboard" component={IndividualDashboard} />
+            <PrivateRoute path="/chats" component={Chat} />
+            <PrivateRoute path="/library" component={Library} />
             <Route path="/login">
               <LoginHeader />
               <Login />

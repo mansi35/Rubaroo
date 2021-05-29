@@ -3,6 +3,11 @@
     flex-direction: column;
 }
 
+.chat:hover {
+    background-color: #F4978E;
+    border-radius: 10px;
+}
+
 .chat__top {
     display: flex;
     flex-direction: row;

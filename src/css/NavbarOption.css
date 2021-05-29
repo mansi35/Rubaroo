@@ -5,6 +5,11 @@
     cursor: pointer;
 }
 
+.navbarOption:hover {
+    background-color: #F8AD9D;
+    border-radius: 20px;
+}
+
 .navbarOption > h5 {
     color: #2F2E41;
     margin: 0;

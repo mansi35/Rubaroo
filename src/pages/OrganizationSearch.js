@@ -10,6 +10,7 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { useAuth } from '../contexts/AuthContext';
 import { useHistory } from 'react-router';
 import db from '../firebase';
+import Requests from '../components/Requests';
 
 function OrganizationSearch() {
     const { currentUser, logout } = useAuth();
@@ -71,6 +72,7 @@ function OrganizationSearch() {
                             <ExitToAppIcon id="logOut"   style={{outline: "none"}} />
                         </div>
                     </div>
+                    <Requests />
                     <div className="organizationSearch__organizations">
                         {organizations.map(({ organizationId, organization }) => (
                             <OrganizationCard 
@@ -79,6 +81,8 @@ function OrganizationSearch() {
                                 emailAdd = {organization.emailAdd}
                                 name = {organization.organizationName}
                                 profilePic = {organization.profilePic}
+                                category = {organization.category}
+                                noUsers = {organization.noUsers}
                             />
                         ))}
                     </div>

@@ -11,6 +11,8 @@ function Register() {
     const [email, setEmail] = useState('');
     const [phone, setPhoneNumber] = useState('');
     const [password, setPassword] = useState('');
+    const [category, setCategory] = useState('');
+    const [noUsers, setNoUsers] = useState(0);
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
     const { signup } = useAuth();
@@ -41,7 +43,9 @@ function Register() {
                     organizationName: organizationName,
                     emailAdd: email,
                     phoneNumber: phone,
-                    profilePic: `https://avatars.dicebear.com/api/${seed}.svg`,
+                    profilePic: `https://avatars.dicebear.com/api/avataaars/${seed}.svg`,
+                    category: category,
+                    noUsers: noUsers,
                 })
                 .then((s) => {
                     history.push("/");
@@ -78,10 +82,21 @@ function Register() {
                             <input onChange={(e) => setPhoneNumber(e.target.value)} type="tel" placeholder="Mobile Number" />
                         </center>
                         <center>
+                            <input onChange={(e) => setNoUsers(e.target.value)} type="numeric" placeholder="No. of Users in Organization" />
+                        </center>
+                        <center>
                             <input onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" />
                         </center>
                         <center>
                             <input onChange={(e) => setConfirmPassword(e.target.value)} type="password" placeholder="Confirm Password" />
+                        </center>
+                        <center>
+                            <div onChange={(e) => setCategory(e.target.value)} className="register__radiocontainer">
+                                <input type="radio" name="category" value="Orphanage" />
+                                <label>Orphanage</label>
+                                <input type="radio" name="category" value="Old Age Home" />
+                                <label>Old Age Home</label>
+                            </div>
                         </center>
                         <center>
                         <p className="register__policy">

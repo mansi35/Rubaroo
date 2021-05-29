@@ -8,19 +8,15 @@
 
 .feed__header > h2 {
     padding-bottom: 5px;
-    font-family: 'Montserrat', sans-serif;
+
     font-size: 48px;
     line-height: 59px;
 
     color: #2F2E41;
 }
 
-.feed__header > h2 > strong {
-    font-family: 'Montserrat', sans-serif;
-}
-
 .feed__subheader > h6 {
-    font-family: 'Montserrat', sans-serif;
+
     font-style: normal;
     font-size: 24px;
     line-height: 29px;

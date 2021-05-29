@@ -1,15 +1,24 @@
 import React from 'react'
-import Navbar from "../components/Navbar";
-import Chats from "../components/Chats";
-import Feed from "../components/Feed";
-import "../css/IndividualDashboard.css";
 
+import Navbar from "../components/Navbar";
+import Books from '../components/Books';
+
+import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
+import ForumOutlinedIcon from '@material-ui/icons/ForumOutlined';
 import VideoCallIcon from '@material-ui/icons/VideoCall';
 import BookIcon from '@material-ui/icons/Book';
 import LocalLibraryIcon from '@material-ui/icons/LocalLibrary';
 import EmojiEmotionsOutlinedIcon from '@material-ui/icons/EmojiEmotionsOutlined';
 
 const navbarOptions = [
+    {
+        Icon: HomeOutlinedIcon,
+        name: "Home"
+    },
+    {
+        Icon: ForumOutlinedIcon,
+        name: "Chat"
+    },
     {
         Icon: VideoCallIcon,
         name: "Video Call"
@@ -28,23 +37,22 @@ const navbarOptions = [
     },
 ]
 
-function IndividualDashboard() {
+function Library() {
     return (
-        <div className = "individualDashboard">
+        <div className = "library">
+
             <div className="row" style={{ padding: 0, margin: 0 }}>
                 <div className="col-md-3" style={{ padding: 0 }}>
                     <Navbar options={navbarOptions} />
                 </div>
 
-                <div className = "col-md-8" style = {{ padding: 0 }}>
-                    <Feed />
-                </div>
-                <div className="col-md-3" style={{ padding: 0 }}>
-                    <Chats />
+                <div className = "col-md-9" style = {{ padding: 0 }}>
+                    <Books />
                 </div>
             </div>
+            
         </div>
     )
 }
 
-export default IndividualDashboard
+export default Library
