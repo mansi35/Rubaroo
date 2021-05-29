@@ -1,7 +1,7 @@
 import './App.css';
 import PrivateRoute from './PrivateRoute.js';
 import IndividualDashboard from "./pages/IndividualDashboard";
-import Chat from "./pages/Chat";
+import MyChat from "./pages/MyChat";
 import Library from "./pages/Library";
 import OrganizationSearch from './pages/OrganizationSearch';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -15,10 +15,12 @@ import UpdateProfile from './pages/UpdateProfile';
 import OrganizationDashboard from './pages/OrganizationDashboard';
 import Connect from './pages/Connect';
 import VideoCall from './pages/VideoCall';
+import MyChatEmpty from './components/chat/MyChatEmpty';
+import Room from './components/videocall/Room';
 
 function App() {
   return (
-    <div className="app">
+    <div className="App">
       <Router>
         <AuthProvider>
           <Switch>
@@ -26,10 +28,12 @@ function App() {
             <PrivateRoute path="/dashboard" component={IndividualDashboard} />
             <PrivateRoute path="/organizationDashboard" component={OrganizationDashboard} />
             <PrivateRoute path="/update-profile" component={UpdateProfile} />
-            <PrivateRoute path="/chats" component={Chat} />
             <PrivateRoute path="/connect" component={Connect} />
             <PrivateRoute path="/library" component={Library} />
             <PrivateRoute path = "/videocall" component={VideoCall} />
+            <PrivateRoute path="/chat/rooms/:roomId/:roomType" component={MyChat} />
+            <PrivateRoute path="/chat" component={MyChatEmpty} />
+            <PrivateRoute path="/room/:roomID" component={Room} />
             <Route path="/login">
               <LoginHeader />
               <Login />

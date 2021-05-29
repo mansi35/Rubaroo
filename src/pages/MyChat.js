@@ -1,14 +1,16 @@
 import React from 'react'
 import Navbar from "../components/Navbar";
-import ChatWindow from "../components/ChatWindow";
-import Chats from "../components/Chats";
-
+// import ChatWindow from "../components/ChatWindow";
+// import Chats from "../components/Chats";
+import '../App.css'
 
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import VideoCallIcon from '@material-ui/icons/VideoCall';
 import BookIcon from '@material-ui/icons/Book';
 import LocalLibraryIcon from '@material-ui/icons/LocalLibrary';
 import EmojiEmotionsOutlinedIcon from '@material-ui/icons/EmojiEmotionsOutlined';
+import Sidebar from '../components/chat/Sidebar';
+import Chat from '../components/chat/Chat';
 
 const navbarOptions = [
     {
@@ -33,24 +35,26 @@ const navbarOptions = [
     },
 ]
 
-function Chat() {
+function MyChat() {
     return (
-        <div className = "chat__ui">
+        <div className = "chat__ui" style={{width: "100vw"}}>
             <div className="row" style={{ padding: 0, margin: 0 }}>
                 <div className="col-md-3" style={{ padding: 0 }}>
                     <Navbar options={navbarOptions} />
                 </div>
-
-                <div className = "col-md-6" style = {{ padding: 0 }}>
-                    <ChatWindow />
+                <div className="app col-md-6">
+                <div className="app__body">
+                    <Chat />
                 </div>
-                <div className="col-md-3" style={{ padding: 0 }}>
-                    <Chats />
                 </div>
-            </div>
-            
+                <div className="app col-md-3">
+                <div className="app__body">
+                    <Sidebar />
+                </div>
+                </div>
+            </div>    
         </div>
     )
 }
 
-export default Chat
+export default MyChat

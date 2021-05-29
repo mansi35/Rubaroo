@@ -4,6 +4,8 @@
     flex-direction: column;
     justify-content: center;
     padding: 50px 50px;
+    align-items: center;
+    padding-bottom: 0;
 }
 
 .feed__header > h2 {

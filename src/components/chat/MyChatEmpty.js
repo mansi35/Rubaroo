@@ -1,17 +1,19 @@
 import React from 'react'
-import Navbar from "../components/Navbar";
-import Feed from "../components/social/Feed";
-import "../css/IndividualDashboard.css";
+import Navbar from "../Navbar";
+import '../../App.css'
+
+import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import VideoCallIcon from '@material-ui/icons/VideoCall';
 import BookIcon from '@material-ui/icons/Book';
 import LocalLibraryIcon from '@material-ui/icons/LocalLibrary';
 import EmojiEmotionsOutlinedIcon from '@material-ui/icons/EmojiEmotionsOutlined';
-import Sidebar from '../components/chat/Sidebar';
+import Sidebar from './Sidebar';
+import ChatEmpty from './ChatEmpty';
 
 const navbarOptions = [
     {
-        Icon: ForumOutlinedIcon,
-        name: "Chat"
+        Icon: HomeOutlinedIcon,
+        name: "Home"
     },
     {
         Icon: VideoCallIcon,
@@ -31,23 +33,26 @@ const navbarOptions = [
     },
 ]
 
-function IndividualDashboard() {
+function MyChat() {
     return (
-        <div className = "individualDashboard">
+        <div className = "chat__ui" style={{width: "100vw"}}>
             <div className="row" style={{ padding: 0, margin: 0 }}>
                 <div className="col-md-3" style={{ padding: 0 }}>
                     <Navbar options={navbarOptions} />
                 </div>
-
-                <div className = "col-md-6" style = {{ padding: 0 }}>
-                    <Feed />
+                <div className="app col-md-6">
+                <div className="app__body">
+                    <ChatEmpty />
                 </div>
-                <div className="col-md-3" style={{ padding: 0 }}>
+                </div> 
+                <div className="app col-md-3">
+                <div className="app__body">
                     <Sidebar />
                 </div>
+                </div>   
             </div>
         </div>
     )
 }
 
-export default IndividualDashboard
+export default MyChat
