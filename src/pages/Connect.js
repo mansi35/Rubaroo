@@ -14,6 +14,7 @@ import db from '../firebase';
 
 function Connect() {
     const { currentUser, logout } = useAuth();
+    const [org, setOrg] = useState('');
     const [friends, setFriends] = useState([]);
     const [connections, setConnections] = useState([]);
     const history = useHistory();
@@ -47,23 +48,34 @@ function Connect() {
 
     useEffect(() => {
         async function fetchData() {
-            db.collection('users').doc(currentUser.uid).get().then((doc) => {
-                friends.push(doc.data().friendOrgs);
-                setFriends(friends);
-                console.log(doc.data().friendOrgs);
-            }).then(() => {
-                db.collection('users').get().then((querySnapshot) => {
-                    querySnapshot.forEach((doc) => {
-                        console.log(doc.data().organizationName);
-                        if (friends.includes(doc.data().organizationName)) {
-                            setConnections(connections => [...connections, {
-                                connectionId: doc.id,
-                                connection: doc.data(),
-                            }])
-                        }
-                    })
-                });
+            const doc = await db.collection('users').doc(currentUser.uid).get();
+            setOrg(doc.data().userOrganizationName);
+    
+            const querySnapshot = await db.collection("organizations").where("organizationName", "==", org).get();
+            // a.then((querySnapshot) => {
+                
+            const snapshot = await db.collection("organizations").doc(querySnapshot[0].id).collection('friendOrganizations').get();
+                    
+            snapshot.forEach((docc) => {
+                setFriends(friends => [...friends, docc.data().friendName]);
+                        
+                    
+                // });
             })
+            .catch((error) => {
+                console.log("Error getting documents: ", error);
+            });
+    
+            db.collection('users').get().then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    if (friends.includes(doc.data().organizationName)) {
+                        setConnections(connections => [...connections, {
+                            connectionId: doc.id,
+                            connection: doc.data(),
+                        }])
+                    }
+                })
+            });
         }
         fetchData();
     // eslint-disable-next-line
