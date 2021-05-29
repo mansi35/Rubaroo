@@ -42,9 +42,13 @@ function MyChat() {
                 <div className="col-md-3" style={{ padding: 0 }}>
                     <Navbar options={navbarOptions} />
                 </div>
-                <div className="app col-md-9">
+                <div className="app col-md-6">
                 <div className="app__body">
                     <Chat />
+                </div>
+                </div>
+                <div className="app col-md-3">
+                <div className="app__body">
                     <Sidebar />
                 </div>
                 </div>
