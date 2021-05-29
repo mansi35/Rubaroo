@@ -19,7 +19,7 @@ function Login() {
         try {
           setError("");
           setLoading(true);
-          const auth = await login(email, password);
+          const auth = await login(email);
           console.log(auth);
           history.push("/");
         } catch {
@@ -37,21 +37,17 @@ function Login() {
                     </Col>
                     <Col xs={12} md={6}>
                         <div className="login__container">
-                            <h3>Log In To FAMista!</h3>
+                            <h3>Rubaroo!</h3>
                             {error && <Alert variant="danger">{error}</Alert>}
                             <form>
                                 <center>
                                     <input onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email" />
                                 </center>
-                                <center>
-                                    <input onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" />
-                                </center>
+                                
                                 <center>
                                     <button disabled={loading} type="submit" onClick={handleSubmit} className="login__login mb-3">Log In</button>
                                 </center>
-                                <center>
-                                    <Link to="/forgot-password"><h6>Forgot Password</h6></Link>
-                                </center>
+                                
                                 <center>
                                     <hr />
                                 </center>

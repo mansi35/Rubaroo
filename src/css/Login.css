@@ -16,7 +16,7 @@
     height: 65%;
     display :flex;
     padding: 10px;
-    background-color: rgba(255, 227, 254, 0.38);
+    background-color: rgb(216, 23, 216);
     flex-direction: column;
     margin-top: 80px;
     margin-left: 15%;
@@ -35,8 +35,8 @@
 .login__container > form > center > input {
     height: 33px;
     margin-bottom: 10px;
-    margin-left: 10px;
-    background-color: white;
+    margin-left: 50px;
+    background-color: pink;
     width: 92%;
     border: 0.5px solid gray;
     border-radius: 5px;
@@ -80,7 +80,7 @@
     height: 43px;
     color: #ffffff;
     border-radius: 2px;
-    background-color: #440a67;;
+    background-color: pink;;
     border: none;
     margin-top: 10px;
     font-family: poppins-bold;
