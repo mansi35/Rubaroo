@@ -12,13 +12,15 @@ import VideocamOffOutlinedIcon from '@material-ui/icons/VideocamOffOutlined';
 import VolumeOffOutlinedIcon from '@material-ui/icons/VolumeOffOutlined';
 import VolumeUpOutlinedIcon from '@material-ui/icons/VolumeUpOutlined';
 
+import ControlIcon from "../components/ControlIcon";
+
 function CallControls() {
     return (
         <div className = "callControls">
             <div className = "send_reaction"> 
                 <input type="text" placeholder="Send reaction... " />
                 <div className = "emojis">
-                    <ThumbUpAltOutlinedIcon size = "large"/>
+                    <>
                     <SentimentVerySatisfiedOutlinedIcon />
                     <SentimentSatisfiedOutlinedIcon />
                     <FavoriteOutlinedIcon />
