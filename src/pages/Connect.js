@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../css/OrganizationSearch.css'
 import SearchIcon from '@material-ui/icons/Search';
-import OrganizationCard from '../components/OrganizationCard';
+import UserCard from '../components/UserCard';
 import Navbar from "../components/Navbar";
 import VideoCallIcon from '@material-ui/icons/VideoCall';
 import BookIcon from '@material-ui/icons/Book';
@@ -14,7 +14,6 @@ import db from '../firebase';
 
 function Connect() {
     const { currentUser, logout } = useAuth();
-    const [org, setOrg] = useState('');
     const [friends, setFriends] = useState([]);
     const [connections, setConnections] = useState([]);
     const history = useHistory();
@@ -48,23 +47,21 @@ function Connect() {
 
     useEffect(() => {
         async function fetchData() {
+            let org="";
             const doc = await db.collection('users').doc(currentUser.uid).get();
-            setOrg(doc.data().userOrganizationName);
+            org = doc.data().organizationName;
+            console.log(org)
     
             const querySnapshot = await db.collection("organizations").where("organizationName", "==", org).get();
-            // a.then((querySnapshot) => {
-                
-            const snapshot = await db.collection("organizations").doc(querySnapshot[0].uid).collection('friendOrganizations').get();
-                    
-            snapshot.forEach((docc) => {
-                setFriends(friends => [...friends, docc.data().friendName]);
-                        
-                    
-                // });
+            querySnapshot.forEach((doc) => {
+                db.collection("organizations").doc(doc.id).collection('friendOrganizations').get().then((snapshot) => {
+                    snapshot.forEach((docc) => {
+                        friends.push(docc.data().friendName);
+                        // setFriends(friends => [...friends, docc.data().friendName]);
+                        console.log(docc.data().friendName)
+                    })
+                });
             })
-            .catch((error) => {
-                console.log("Error getting documents: ", error);
-            });
     
             db.collection('users').get().then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
@@ -78,6 +75,7 @@ function Connect() {
             });
         }
         fetchData();
+        setFriends([]);
     // eslint-disable-next-line
     }, [])
 
@@ -103,7 +101,7 @@ function Connect() {
                     </div>
                     <div className="organizationSearch__organizations">
                         {connections.map(({ connectionId, connection }) => (
-                            <OrganizationCard 
+                            <UserCard 
                                 key = {connectionId}
                                 id = {connectionId}
                                 emailAdd = {connection.emailAdd}

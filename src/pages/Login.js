@@ -21,7 +21,7 @@ function Login() {
         try {
           setError("");
           setLoading(true);
-          const auth = await login(email);
+          const auth = await login(email, password);
           console.log(auth);
           history.push("/dashboard");
         } catch {
@@ -47,6 +47,7 @@ function Login() {
                             <form>
                                 
                                     <input onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter your email" />
+                                    <input onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" />
 
                                 
                                 <center>

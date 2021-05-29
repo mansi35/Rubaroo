@@ -8,8 +8,6 @@ import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteOutlined';
 import CallEndOutlinedIcon from '@material-ui/icons/CallEndOutlined';
 import GradeOutlinedIcon from '@material-ui/icons/GradeOutlined';
 import VideocamOutlinedIcon from '@material-ui/icons/VideocamOutlined';
-import VideocamOffOutlinedIcon from '@material-ui/icons/VideocamOffOutlined';
-import VolumeOffOutlinedIcon from '@material-ui/icons/VolumeOffOutlined';
 import VolumeUpOutlinedIcon from '@material-ui/icons/VolumeUpOutlined';
 
 function CallControls() {
