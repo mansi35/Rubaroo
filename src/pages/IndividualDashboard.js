@@ -8,6 +8,7 @@ import LocalLibraryIcon from '@material-ui/icons/LocalLibrary';
 import EmojiEmotionsOutlinedIcon from '@material-ui/icons/EmojiEmotionsOutlined';
 import Sidebar from '../components/chat/Sidebar';
 import ForumOutlinedIcon from '@material-ui/icons/ForumOutlined';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 const navbarOptions = [
     {
@@ -30,6 +31,10 @@ const navbarOptions = [
         Icon: EmojiEmotionsOutlinedIcon,
         name: "Watch Party"
     },
+    {
+        Icon: ExitToAppIcon,
+        name: "Log out"
+    }
 ]
 
 function IndividualDashboard() {

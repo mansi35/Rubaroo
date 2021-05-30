@@ -34,6 +34,10 @@ function Connect() {
             Icon: EmojiEmotionsOutlinedIcon,
             name: "Watch Party"
         },
+        {
+            Icon: ExitToAppIcon,
+            name: "Logout"
+        }
     ]
 
     async function handleSubmit() {

@@ -9,6 +9,7 @@ import VideoCallIcon from '@material-ui/icons/VideoCall';
 import BookIcon from '@material-ui/icons/Book';
 import LocalLibraryIcon from '@material-ui/icons/LocalLibrary';
 import EmojiEmotionsOutlinedIcon from '@material-ui/icons/EmojiEmotionsOutlined';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 const navbarOptions = [
     {
@@ -34,6 +35,10 @@ const navbarOptions = [
     {
         Icon: EmojiEmotionsOutlinedIcon,
         name: "Watch Party"
+    },
+    {
+        Icon: ExitToAppIcon,
+        name: "Logout"
     },
 ]
 

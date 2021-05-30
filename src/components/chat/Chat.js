@@ -30,10 +30,12 @@ function Chat() {
         // alert("Socket opened!")
 
         if (!open) {
+            alert("Close Socket");
             ws.close();
+            alert("Socket closed!")
         }
         else {
-
+            alert("open connection")
         ws.onmessage = (event) => {
             // You can find the conversationId in event.message.data.conversationId;
             const data = JSON.parse(event.data);
@@ -90,10 +92,9 @@ function Chat() {
         };
         };
 
-
     handleSuccess(stream);
     }
-    setOpen(!open);
+    setOpen(!open);    
     }
 
     useEffect(() => {
@@ -201,7 +202,7 @@ function Chat() {
                     <input value={input} onChange={(e) => setInput(e.target.value)} type="text" placeholder="Type a message"/>
                     <button type="submit" onClick={sendMessage}> Send a Message</button>
                 </form>
-                <button type="submit" onClick = {listenMessage}>Send</button>
+                <MicIcon onClick = {listenMessage} />
             </div>
         </div>
     )
