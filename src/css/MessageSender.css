@@ -36,9 +36,6 @@
     background-color: #FFDAB9;
 }
 
-.messageSender__top > form > button {
-    display: none;
-}
 
 @media (max-width: 1200px) {
     .messageSender__top > form > button {

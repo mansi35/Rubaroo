@@ -74,3 +74,10 @@
     padding-top: 10px;
     font-size: 12px;
 }
+
+.card-header > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px !important;
+}
