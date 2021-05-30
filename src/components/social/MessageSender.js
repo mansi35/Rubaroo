@@ -6,6 +6,7 @@ import {useAuth} from '../../contexts/AuthContext';
 import { storage } from '../../firebase'
 import db from '../../firebase'
 import firebase from 'firebase'
+import SessionModal from './SessionModal'
 
 function MessageSender() {
     const {currentUser} = useAuth();
@@ -13,6 +14,7 @@ function MessageSender() {
     const [image, setImage] = useState('');
     const [progress, setProgress] = useState(0);
     const [confirm, setImgUploadConfirm] = useState('');
+    const [show, setShow] = useState(false);
 
     const uploadFileWithClick = () => {
         document.getElementsByClassName('messageSender__imageFile')[0].click()
@@ -77,14 +79,22 @@ function MessageSender() {
         }
     }
 
+    const showModal = () => {
+        setShow(true);
+    };
+    
+    const hideModal = () => {
+        setShow(false);
+    };
+
     return (
         <div className="messageSender">
             <div className="messageSender__top">
                 <Avatar src={currentUser.photoURL} />
-                <form>
+                <form style={{ display: "flex", flexDirection: "row" }}>
                     <input value={input} onChange={(e) => setInput(e.target.value)} className="messageSender__input" placeholder={`What's on your mind `+ currentUser.displayName + `?`} />
                     <button onClick={handleSubmit} type="submit">
-                        Hidden Submit
+                        Post
                     </button>
                     <h4>{confirm}</h4>
                 </form>
@@ -95,6 +105,14 @@ function MessageSender() {
                     <PhotoLibraryIcon style={{ color: "green" }} />
                     <input type="file" className="messageSender__imageFile" onChange={handleChange} />
                     <p style={{color:"black", margin: 0, paddingLeft: "8px"}}>Photo/Video</p>
+                </div>
+                <div className="messageSender__session">
+                    <button onClick={showModal}>
+                        Schedule Session
+                    </button>
+                    <SessionModal show={show} handleClose={hideModal}>
+                        <p>Modal</p>
+                    </SessionModal>
                 </div>
             </div>
         </div>
