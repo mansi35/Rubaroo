@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from "../components/Navbar";
-import "../css/IndividualDashboard.css";
+import "../css/OrganizationSearch.css";
 import VideoCallIcon from '@material-ui/icons/VideoCall';
 import BookIcon from '@material-ui/icons/Book';
 import LocalLibraryIcon from '@material-ui/icons/LocalLibrary';
@@ -52,6 +52,7 @@ function StoryTime() {
                 <div className="col-md-3" style={{ padding: 0 }}>
                     <Navbar options={navbarOptions} />
                 </div>
+                <div className="col-md-6 organizationSearch__organizations">
                     {posts.map(({ id, post }) => (
                         <PostCard
                             key={id}
@@ -59,8 +60,11 @@ function StoryTime() {
                             message={post.message}
                             username={post.username}
                             image={post.image}
+                            title={post.title}
+                            link={post.sessionLink}
                         />
                     ))}
+                </div>
                 <div className="col-md-3" style={{ padding: 0 }}>
                     <Sidebar />
                 </div>

@@ -26,6 +26,7 @@
     height: 100px;
     background-color: #FFDAB9;
     border-radius: 15px !important;
+    padding: 0;
 }
 
 .card-body {
@@ -66,6 +67,25 @@
 }
 
 .card-body > button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    opacity: 0.6;
+}
+
+.card-body > a > button {
+    background-color: #F8AD9D;
+    border: none;
+    color: white;
+    padding: 7px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 20px;
+    opacity: 1;
+    margin-top: 10px;
+}
+
+.card-body > a > button:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     opacity: 0.6;
 }
