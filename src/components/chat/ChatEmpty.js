@@ -9,6 +9,8 @@ function Chat() {
     const [input, setInput] = useState("");
     const [seed] = useState("");
 
+
+
     const sendMessage = (e) => {
         e.preventDefault();
         console.log("You typed >>>> ", input);
@@ -44,7 +46,7 @@ function Chat() {
                     <input value={input} onChange={(e) => setInput(e.target.value)} type="text" placeholder="Type a message"/>
                     <button type="submit" onClick={sendMessage}> Send a Message</button>
                 </form>
-                <MicIcon fontSize="large"/>
+                <MicIcon fontSize="large" />
             </div>
         </div>
     )
