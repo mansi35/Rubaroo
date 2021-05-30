@@ -9,6 +9,7 @@ import LocalLibraryIcon from '@material-ui/icons/LocalLibrary';
 import EmojiEmotionsOutlinedIcon from '@material-ui/icons/EmojiEmotionsOutlined';
 import Sidebar from './Sidebar';
 import ChatEmpty from './ChatEmpty';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 const navbarOptions = [
     {
@@ -31,6 +32,10 @@ const navbarOptions = [
         Icon: EmojiEmotionsOutlinedIcon,
         name: "Watch Party"
     },
+    {
+        Icon: ExitToAppIcon,
+        name: "Logout"
+    }
 ]
 
 function MyChat() {

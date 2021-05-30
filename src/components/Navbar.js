@@ -11,7 +11,8 @@ function SideNavbar({ options }) {
             {options.map(option => {
                 return <NavbarOption 
                     Icon = {option.Icon} 
-                    name = {option.name} />
+                    name = {option.name}
+                    link = {option.link} />
                 }
             )}
             <Party />

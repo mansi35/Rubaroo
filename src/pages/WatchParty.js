@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Navbar from "../components/Navbar";
-import Books from '../components/Books';
+import Movies from '../components/Movies';
 
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import ForumOutlinedIcon from '@material-ui/icons/ForumOutlined';
@@ -20,7 +20,7 @@ const navbarOptions = [
     {
         Icon: ForumOutlinedIcon,
         name: "Chat",
-        link: '/chat',
+        link: '/chat'
     },
     {
         Icon: VideoCallIcon,
@@ -38,20 +38,15 @@ const navbarOptions = [
         link: '/library'
     }, 
     {
-        Icon: EmojiEmotionsOutlinedIcon,
-        name: "Watch Party",
-        link: '/watch'
-    },
-    {
         Icon: ExitToAppIcon,
         name: "Log out",
         link: '/login'
     }
 ]
 
-function Library() {
+function WatchParty() {
     return (
-        <div className = "library">
+        <div className = "watchParty">
 
             <div className="row" style={{ padding: 0, margin: 0 }}>
                 <div className="col-md-3" style={{ padding: 0 }}>
@@ -59,7 +54,7 @@ function Library() {
                 </div>
 
                 <div className = "col-md-9" style = {{ padding: 0 }}>
-                    <Books />
+                    <Movies />
                 </div>
             </div>
             
@@ -67,4 +62,4 @@ function Library() {
     )
 }
 
-export default Library
+export default WatchParty

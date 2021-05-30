@@ -3,7 +3,6 @@ import "../css/VideoCallPage.css";
 import CallNavbar from "../components/CallNavbar";
 import Video from "../components/Video";
 import CallControls from "../components/CallControls"; 
-import Navbar from "../components/Navbar";
 
 
 function VideoCall() {

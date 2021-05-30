@@ -13,27 +13,33 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 const navbarOptions = [
     {
         Icon: ForumOutlinedIcon,
-        name: "Chat"
+        name: "Chat",
+        link: '/chat',
     },
     {
         Icon: VideoCallIcon,
-        name: "Video Call"
+        name: "Video Call",
+        link: '/connect',
     },
     {
         Icon: BookIcon, 
-        name: "Listen to a story"
+        name: "Listen to a story",
+        link: '/dashboard'
     }, 
     {
         Icon: LocalLibraryIcon,
-        name: "Library"
+        name: "Library",
+        link: '/library'
     }, 
     {
         Icon: EmojiEmotionsOutlinedIcon,
-        name: "Watch Party"
+        name: "Watch Party",
+        link: '/watch'
     },
     {
         Icon: ExitToAppIcon,
-        name: "Log out"
+        name: "Log out",
+        link: '/login'
     }
 ]
 

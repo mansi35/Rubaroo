@@ -17,6 +17,7 @@ import Connect from './pages/Connect';
 import VideoCall from './pages/VideoCall';
 import MyChatEmpty from './components/chat/MyChatEmpty';
 import Room from './components/videocall/Room';
+import WatchParty from './pages/WatchParty';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <PrivateRoute path="/chat/rooms/:roomId/:roomType" component={MyChat} />
             <PrivateRoute path="/chat" component={MyChatEmpty} />
             <PrivateRoute path="/room/:roomID" component={Room} />
+            <PrivateRoute path="/watch" component={WatchParty} />
             <Route path="/login">
               <LoginHeader />
               <Login />
